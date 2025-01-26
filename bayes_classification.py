@@ -1,5 +1,7 @@
 import numpy as np
-
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+from scipy.stats import norm
 
 q_discrete = np.array([0]*10 + [1] + [0]*10)
 W = np.array([[0, 1], [1, 0]])
@@ -36,8 +38,7 @@ print(q)
 #%%
 print(bayes_risk_discrete(discreteA, discreteC, W, find_strategy_discrete(discreteA, discreteC, W)))
 #%%
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
+
 def visualize_discrete(discrete_A, discrete_C, q):
     posterior_A = discrete_A['Prob'] * discrete_A['Prior']
     posterior_C = discrete_C['Prob'] * discrete_C['Prior']
@@ -110,7 +111,7 @@ def compute_measurement_lr_discrete(imgs):
 
 
 
-data = np.load("data_33rpz_bayes.npz", allow_pickle=True)
+data = np.load("data_bayes.npz", allow_pickle=True)
 alphabet = data["alphabet"]
 images_test = data["images_test"]
 labels_test = data["labels_test"]
@@ -121,7 +122,7 @@ discreteA = {'Prior': 0.6153846153846154,
 discreteC = {'Prior': 0.38461538461538464,
              'Prob': np.array([0., 0., 0., 0.02, 0.02, 0.22, 0.46, 0.16, 0.1, 0.02, 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])}
 measurements_discrete = compute_measurement_lr_discrete(images_test)
-data = np.load("data_33rpz_bayes.npz", allow_pickle=True)
+data = np.load("data_bayes.npz", allow_pickle=True)
 alphabet = data["alphabet"]
 images_test = data["images_test"]
 labels_test = data["labels_test"]
@@ -212,7 +213,7 @@ print(find_strategy_2normal(contA, contC))
 
 
 #%%
-from scipy.stats import norm
+
 def visualize_2norm(cont_A, cont_B, q):
     n_sigmas = 5
     n_points = 200
