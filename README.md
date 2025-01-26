@@ -8,7 +8,8 @@ This project implements an Optical Character Recognition (OCR) system based on B
 - Continuous Measurements: Features are modeled as continuous values following a normal distribution.
 
 The objective is to classify image chips with minimal error using Bayesian inference and decision theory while evaluating the classification performance under different settings.
-Key Concepts
+
+# Key Concepts
 
 - Bayesian Decision Theory: A statistical framework for making optimal decisions under uncertainty by combining prior knowledge with observed data to minimize decision risk.
 - OCR (Optical Character Recognition): A method for converting images of text into machine-readable characters.
@@ -18,15 +19,15 @@ Key Concepts
 # Features
 
  Discrete Measurements Case:
-        Feature Extraction: Computes a discrete feature, xx, based on the difference between pixel intensities on the left and right halves of the image, normalized to the range [−10,10][−10,10].
-        Classification Strategy: Uses a 21-element vector to represent the optimal decision q(x)q(x), where 0 indicates "A" and 1 indicates "C."
-        Bayesian Risk: Calculates the Bayesian risk using the zero-one loss matrix and evaluates performance.
+    - Feature Extraction: Computes a discrete feature, x, based on the difference between pixel intensities on the left and right halves of the image, normalized to the range [−10,10].
+    - Classification Strategy: Uses a 21-element vector to represent the optimal decision q(x), where 0 indicates "A" and 1 indicates "C."
+    - Bayesian Risk: Calculates the Bayesian risk using the zero-one loss matrix and evaluates performance.
 
 Continuous Measurements Case:
-        Feature Extraction: Computes a continuous feature, xx, based on the unnormalized pixel intensity difference between the left and right halves of the image.
-        Normal Distribution Assumption: Assumes that features for classes "A" and "C" follow normal distributions with given means, variances, and prior probabilities.
-        Optimal Decision Rule: Derives decision thresholds by solving a quadratic inequality, resulting in up to two classification thresholds.
-        Bayesian Risk: Minimizes classification error based on continuous feature values.
+    - Feature Extraction: Computes a continuous feature, x, based on the unnormalized pixel intensity difference between the left and right halves of the image.
+    - Normal Distribution Assumption: Assumes that features for classes "A" and "C" follow normal distributions with given means, variances, and prior probabilities.
+    - Optimal Decision Rule: Derives decision thresholds by solving a quadratic inequality, resulting in up to two classification thresholds.
+    - Bayesian Risk: Minimizes classification error based on continuous feature values.
 
 Optimal Decision Strategy:
         Derives and applies the optimal Bayesian strategy to minimize misclassification risk.
