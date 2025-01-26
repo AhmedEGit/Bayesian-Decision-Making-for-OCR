@@ -16,7 +16,7 @@ The objective is to classify image chips with minimal error using Bayesian infer
 - Bayesian Risk: A metric to quantify the cost of making incorrect decisions under uncertain information.
 - Loss Function: A measure of the cost associated with classification errors. The project uses the "zero-one loss" for simplifying decision-making.
 
-# Features
+# Discrete and Continuous Approaches
 
  Discrete Measurements Case:
 - Feature Extraction: Computes a discrete feature, x, based on the difference between pixel intensities on the left and right halves of the image, normalized to the range [−10,10].
